@@ -1,4 +1,4 @@
 vim.opt.background = "dark"
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme catppuccin-frappe")
 
