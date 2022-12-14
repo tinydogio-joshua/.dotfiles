@@ -1,6 +1,5 @@
 # Ignore Files
 
+.git
 README.md
-.git/
-.gitignore
 
