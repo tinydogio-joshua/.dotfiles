@@ -13,9 +13,9 @@ return require('packer').startup(function(use)
   use {'ThePrimeagen/vim-be-good', disable = vscode}
 
   -- Theme: Catppuccin
-  use {'catppuccin/nvim', disable = vscode}
+  use {'catppuccin/nvim', as = 'catppuccin', disable = vscode}
 
   -- Theme: Tokyo Night
-  use {'folke/tokyonight.nvim', disable = vscode}
+  use {'folke/tokyonight.nvim', branch = 'main', disable = vscode}
 end)
 
