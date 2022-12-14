@@ -7,6 +7,8 @@ vim.opt.smartindent = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 
+vim.opt.scrolloff = 8
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
