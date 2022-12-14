@@ -2,6 +2,7 @@ alias ll='ls -lG'
 alias lla='ls -laG'
 alias cat='bat --paging=never'
 alias dev='python3 -m http.server'
+alias vim='nvim'
 
 export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
 
