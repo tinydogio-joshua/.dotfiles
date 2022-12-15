@@ -3,19 +3,10 @@ local vscode = vim.g.vscode == 1
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use {'wbthomason/packer.nvim'}
-
-  -- Surround
   use {'tpope/vim-surround'}
-
-  -- Vim Be Good
   use {'ThePrimeagen/vim-be-good', disable = vscode}
-
-  -- Theme: Catppuccin
+  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }, disable = vscode}
   use {'catppuccin/nvim', as = 'catppuccin', disable = vscode}
-
-  -- Theme: Tokyo Night
-  use {'folke/tokyonight.nvim', branch = 'main', disable = vscode}
 end)
 
