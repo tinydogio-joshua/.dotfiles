@@ -1,5 +1,6 @@
 # Ignore Files
 
 .git
+.DS_Store
 README.md
 
