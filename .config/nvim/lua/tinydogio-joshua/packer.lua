@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-surround'}
   use {'ThePrimeagen/vim-be-good', disable = vscode}
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }, disable = vscode}
+  use {'xiyaowong/nvim-transparent', disable = vscode}
   use {'catppuccin/nvim', as = 'catppuccin', disable = vscode}
 end)
 

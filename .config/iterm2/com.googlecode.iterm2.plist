@@ -2098,6 +2098,8 @@
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2754,7 +2756,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>HackNerdFontCompleteM-Regular 11</string>
+			<string>JetBrainsMono-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2818,7 +2820,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.9199999999999999</real>
+			<real>1.4399999999999999</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
