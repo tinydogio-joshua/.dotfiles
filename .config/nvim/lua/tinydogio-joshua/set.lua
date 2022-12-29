@@ -12,3 +12,6 @@ vim.opt.scrolloff = 8
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.laststatus = 0
+vim.opt.ruler = false
+

@@ -7,6 +7,21 @@ return require('packer').startup(function(use)
   use {'tpope/vim-surround'}
 
   use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    disable = vscode
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+    disable = vscode
+  }
+
+  use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
       -- LSP Support
