@@ -2352,7 +2352,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>25.843151595744679</real>
+			<real>64</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
