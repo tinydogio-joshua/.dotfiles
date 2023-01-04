@@ -48,5 +48,7 @@ return require('packer').startup(function(use)
   -- use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }, disable = vscode}
   use {'xiyaowong/nvim-transparent', disable = vscode}
   use {'catppuccin/nvim', as = 'catppuccin', disable = vscode}
+  use {'neanias/everforest-nvim', branch = 'main', disable = vscode}
+  use {'folke/tokyonight.nvim', disable = vscode}
 end)
 
