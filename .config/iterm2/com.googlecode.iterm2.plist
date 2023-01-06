@@ -3126,8 +3126,6 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
-			<key>Initial Use Transparency</key>
-			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -3441,8 +3439,6 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>JetBrainsMono-Regular 12</string>
-			<key>Only The Default BG Color Uses Transparency</key>
-			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
