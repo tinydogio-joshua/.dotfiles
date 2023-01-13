@@ -1,15 +1,18 @@
-vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
+local vscode = vim.g.vscode == 1
 
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+if not vscode then
+  vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
 
-lsp.ensure_installed({
-  'tsserver',
-  'eslint',
-  'sumneko_lua',
-})
+  local lsp = require('lsp-zero')
+  lsp.preset('recommended')
 
-lsp.nvim_workspace()
+  lsp.ensure_installed({
+    'tsserver',
+    'eslint',
+    'sumneko_lua',
+  })
 
-lsp.setup()
+  lsp.nvim_workspace()
 
+  lsp.setup()
+end

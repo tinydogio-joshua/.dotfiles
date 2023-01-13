@@ -1,4 +1,6 @@
-vim.opt.background = "dark"
+local vscode = vim.g.vscode == 1
 
-vim.cmd("colorscheme everforest")
-
+if not vscode then
+  vim.opt.background = "dark"
+  vim.cmd("colorscheme everforest")
+end
