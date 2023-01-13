@@ -45,7 +45,7 @@ sketchybar --default updates=when_shown                    \
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces
 
-SPACE_ICONS=("一" "二" "三" "四" "五")
+SPACE_ICONS=("一" "二" "三" "四")
 
 for i in "${!SPACE_ICONS[@]}"
 do
