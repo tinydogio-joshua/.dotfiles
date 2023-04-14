@@ -38,7 +38,7 @@ mod2:
   - option
   - shift
   - control
-  # - command
+  - command
 
 # Commands:
 # special key values
@@ -59,9 +59,9 @@ cycle-layout:
   key: space
 
 # Move to the previous layout in the list.
-cycle-layout-backward:
-  mod: mod2
-  key: space
+# cycle-layout-backward:
+#   mod: mod2
+#   key: space
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
@@ -74,14 +74,14 @@ expand-main:
   key: l
 
 # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
-increase-main:
-  mod: mod1
-  key: ','
+# increase-main:
+#   mod: mod1
+#   key: ','
 
 # Decrease the number of windows in the main pane. Note that not all layouts respond to this command.
-decrease-main:
-  mod: mod1
-  key: '.'
+# decrease-main:
+#   mod: mod1
+#   key: '.'
 
 # General purpose command for custom layouts. Functionality is layout-dependent.
 # command1:
@@ -111,19 +111,19 @@ focus-cw:
   key: k
 
 # Focus the main window in the list.
-focus-main:
-  mod: mod1
-  key: m
+# focus-main:
+#   mod: mod1
+#   key: m
 
 # Focus the next screen in the list going counter-clockwise.
-focus-screen-ccw:
-  mod: mod1
-  key: p
+# focus-screen-ccw:
+#   mod: mod1
+#   key: p
 
 # Focus the next screen in the list going clockwise.
-focus-screen-cw:
-  mod: mod1
-  key: n
+# focus-screen-cw:
+#   mod: mod1
+#   key: n
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 swap-screen-ccw:
@@ -132,7 +132,7 @@ swap-screen-ccw:
 
 # Move the currently focused window onto the next screen in the list going clockwise.
 swap-screen-cw:
-  mod: mod1
+  mod: mod2
   key: l
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
@@ -146,9 +146,9 @@ swap-cw:
   key: k
 
 # Swap the position of the currently focused window with the main window in the list.
-swap-main:
-  mod: mod1
-  key: enter
+# swap-main:
+#   mod: mod1
+#   key: enter
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
@@ -166,44 +166,44 @@ swap-main:
 #   key: i
 
 # Move the currently focused window to the space to the left.
-throw-space-left:
-  mod: mod2
-  key: left
+# throw-space-left:
+#   mod: mod2
+#   key: left
 
 # Move currently the focused window to the space to the right.
-throw-space-right:
-  mod: mod2
-  key: right
+# throw-space-right:
+#   mod: mod2
+#   key: right
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
-toggle-float:
-  mod: mod1
-  key: t
+# toggle-float:
+#   mod: mod1
+#   key: t
 
 # Display the layout HUD with the current layout on each screen.
-display-current-layout:
-  mod: mod1
-  key: i
+# display-current-layout:
+#   mod: mod1
+#   key: i
 
 # Turn on or off tiling entirely.
-toggle-tiling:
-  mod: mod1
-  key: t
+# toggle-tiling:
+#   mod: mod1
+#   key: t
 
 # Rerun the current layout's algorithm.
-reevaluate-windows:
-  mod: mod1
-  key: z
+# reevaluate-windows:
+#   mod: mod1
+#   key: z
 
 # Turn on or off focus-follows-mouse.
-toggle-focus-follows-mouse:
-  mod: mod2
-  key: x
+# toggle-focus-follows-mouse:
+#   mod: mod2
+#   key: x
 
 # Automatically quit and reopen Amethyst.
 relaunch-amethyst:
-  mod: mod2
-  key: z
+  mod: mod1
+  key: "'"
 
 # Boolean flag for whether or not to add margins betwen windows (default false).
 window-margins: true
@@ -282,4 +282,3 @@ restore-layouts-on-launch: true
 
 # true to display some optional debug information in the layout HUD (default false).
 debug-layout-info: false
-
