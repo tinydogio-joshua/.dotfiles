@@ -43,7 +43,7 @@ mod2:
 # Move to the next layout in the list.
 cycle-layout:
   mod: mod1
-  key: space
+  key: y
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
@@ -148,7 +148,7 @@ new-windows-to-main: false
 follow-space-thrown-windows: true
 
 # The integer percentage of the screen dimension to increment and decrement main pane ratios by (default 5).
-window-resize-step: 5
+window-resize-step: 4
 
 # Padding to apply between windows and the left edge of the screen (in px, default 0).
 screen-padding-left: 32
