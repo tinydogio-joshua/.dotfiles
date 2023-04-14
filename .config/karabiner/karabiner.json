@@ -193,58 +193,68 @@
                         ]
                     },
                     {
-                        "description": "CAPS+↩︎ › CAPS",
+                        "description": "Map g to cmd,ctrl,alt when held",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
+                                "type": "basic",
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 150
+                                },
                                 "from": {
-                                    "key_code": "return_or_enter",
+                                    "key_code": "g",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
-                                        "key_code": "caps_lock"
+                                        "key_code": "g"
                                     }
                                 ],
-                                "type": "basic"
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "description": "CAPS+A › CAPS",
+                        "description": "Map h to cmd,ctrl,alt when held",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
+                                "type": "basic",
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 150
+                                },
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "h",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
-                                        "key_code": "caps_lock"
+                                        "key_code": "h"
                                     }
                                 ],
-                                "type": "basic"
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
