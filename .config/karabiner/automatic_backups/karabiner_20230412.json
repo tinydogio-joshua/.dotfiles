@@ -193,32 +193,58 @@
                         ]
                     },
                     {
-                        "description": "Map tab to cmd,ctrl,alt when held",
+                        "description": "CAPS+↩︎ › CAPS",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "tab",
+                                    "key_code": "return_or_enter",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
                                     }
                                 },
-                                "to_if_alone": [
+                                "to": [
                                     {
-                                        "key_code": "tab"
+                                        "key_code": "caps_lock"
                                     }
                                 ],
-                                "to_if_held_down": [
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CAPS+A › CAPS",
+                        "manipulators": [
+                            {
+                                "conditions": [
                                     {
-                                        "key_code": "left_command",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_option"
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
-                                ]
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }
@@ -291,34 +317,6 @@
                         "vendor_id": 1452
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 1,
-                        "vendor_id": 18003
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 1,
-                        "vendor_id": 18003
-                    },
-                    "ignore": true,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
