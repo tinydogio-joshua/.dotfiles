@@ -3,6 +3,7 @@ alias lla='ls -laG'
 alias cat='bat --paging=never'
 alias dev='python3 -m http.server'
 alias vim='nvim'
+alias rbrew='/usr/local/bin/brew'
 
 export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
 
