@@ -90,6 +90,11 @@ relaunch-amethyst:
   mod: mod1
   key: "'"
 
+# Display the layout HUD with the current layout on each screen.
+display-current-layout:
+  mod: mod1
+  key: c
+
 # Boolean flag for whether or not to add margins betwen windows (default false).
 window-margins: true
 
