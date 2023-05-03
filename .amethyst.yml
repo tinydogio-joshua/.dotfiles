@@ -10,6 +10,7 @@
 layouts:
   - fullscreen
   - tall
+  - floating
   # - tall-right
   # - wide
   # - two-pane
@@ -21,79 +22,75 @@ layouts:
   # - 4column-right
   # - column
   # - row
-  # - floating
   # - widescreen-tall
   # - widescreen-tall-right
   # - bsp
 
-# First mod (default option + shift).
 mod1:
-  - option
-  # - shift
-  - control
   - command
+  - control
+  - option
 
-# Second mod (default option + shift + control).
 mod2:
+  - command
+  - control
   - option
   - shift
-  - control
-  - command
 
 # Move to the next layout in the list.
 cycle-layout:
-  mod: mod1
   key: y
+  mod: mod1
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
-  mod: mod1
   key: h
+  mod: mod1
 
 # Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 expand-main:
-  mod: mod1
   key: l
+  mod: mod1
 
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
-  mod: mod1
   key: j
+  mod: mod1
 
 # Focus the next window in the list going clockwise.
 focus-cw:
-  mod: mod1
   key: k
+  mod: mod1
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 swap-screen-ccw:
-  mod: mod2
   key: h
+  mod: mod2
 
 # Move the currently focused window onto the next screen in the list going clockwise.
 swap-screen-cw:
-  mod: mod2
   key: l
+  mod: mod2
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
-  mod: mod2
   key: j
+  mod: mod2
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
-  mod: mod2
   key: k
+  mod: mod2
 
 # Automatically quit and reopen Amethyst.
 relaunch-amethyst:
-  mod: mod1
   key: "'"
+  mod: mod1
 
 # Display the layout HUD with the current layout on each screen.
 display-current-layout:
-  mod: mod1
   key: c
+  mod: mod1
 
 # Boolean flag for whether or not to add margins betwen windows (default false).
 window-margins: true
