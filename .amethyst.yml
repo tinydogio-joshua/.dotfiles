@@ -10,7 +10,7 @@
 layouts:
   - fullscreen
   - tall
-  - floating
+  # - floating
   # - tall-right
   # - wide
   # - two-pane
