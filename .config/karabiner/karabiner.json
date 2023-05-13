@@ -18,6 +18,66 @@
                 },
                 "rules": [
                     {
+                        "description": "G Modifier",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "g_as_modifier pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    "left_command",
+                                    "left_control",
+                                    "left_option"
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "g_as_modifier pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "g_as_modifier pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "g"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "CAPS › ESC, CAPS+H/J/K/L › ←↓↑→, CAPS+M/comma › PG↓↑",
                         "manipulators": [
                             {
