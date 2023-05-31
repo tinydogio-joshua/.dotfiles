@@ -45,7 +45,9 @@ return require('packer').startup(function(use)
   }
 
   use {'xiyaowong/nvim-transparent', disable = vscode}
-  use {'neanias/everforest-nvim', branch = 'main', disable = vscode}
+  -- use {'neanias/everforest-nvim', branch = 'main', disable = vscode}
+  -- use { 'embark-theme/vim', as = 'embark', disable = vscode }
+  use({ 'rose-pine/neovim', as = 'rose-pine', disable = vscode })
   use {'dstein64/vim-startuptime', disable = vscode}
 end)
 
