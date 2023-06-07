@@ -44,10 +44,10 @@ return require('packer').startup(function(use)
     disable = vscode
   }
 
-  use {'ThePrimeagen/vim-be-good', disable = vscode}
   use {'xiyaowong/nvim-transparent', disable = vscode}
-  use {'catppuccin/nvim', as = 'catppuccin', disable = vscode}
-  use {'neanias/everforest-nvim', branch = 'main', disable = vscode}
-  use {'folke/tokyonight.nvim', disable = vscode}
+  -- use {'neanias/everforest-nvim', branch = 'main', disable = vscode}
+  -- use { 'embark-theme/vim', as = 'embark', disable = vscode }
+  use({ 'rose-pine/neovim', as = 'rose-pine', disable = vscode })
+  use {'dstein64/vim-startuptime', disable = vscode}
 end)
 
