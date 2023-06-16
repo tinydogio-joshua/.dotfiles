@@ -49,5 +49,13 @@ return require('packer').startup(function(use)
   -- use { 'embark-theme/vim', as = 'embark', disable = vscode }
   use({ 'rose-pine/neovim', as = 'rose-pine', disable = vscode })
   use {'dstein64/vim-startuptime', disable = vscode}
+
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
 
