@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
     disable = vscode
   }
 
-  use ({ 'projekt0n/github-nvim-theme', disable = vscode })
+  use { "catppuccin/nvim", as = "catppuccin", disable = vscode }
 
   -- install without yarn or npm
   use({
