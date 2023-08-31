@@ -39,11 +39,17 @@ export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 
-autoload -Uz compinit; compinit
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+# autoload -Uz compinit; compinit
+# zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--ansi"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Always have starship last.
 eval "$(starship init zsh)"
