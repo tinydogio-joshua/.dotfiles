@@ -67,12 +67,16 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'embark-theme/vim',
-    name = 'embark',
+    -- Theme
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'embark'
+      require('rose-pine').setup {
+        dark_variant = 'moon',
+        variant = 'moon'
+      }
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
