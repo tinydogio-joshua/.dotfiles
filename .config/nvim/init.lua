@@ -74,6 +74,7 @@ require('lazy').setup({
     config = function()
       require('rose-pine').setup {
         dark_variant = 'moon',
+        disable_background = true,
         variant = 'moon'
       }
       vim.cmd.colorscheme 'rose-pine'
