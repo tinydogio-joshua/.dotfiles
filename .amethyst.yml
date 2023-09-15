@@ -54,12 +54,12 @@ expand-main:
 
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
-  key: j
+  key: k
   mod: mod1
 
 # Focus the next window in the list going clockwise.
 focus-cw:
-  key: k
+  key: j
   mod: mod1
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
@@ -74,12 +74,12 @@ swap-screen-cw:
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
-  key: j
+  key: k
   mod: mod2
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
-  key: k
+  key: j
   mod: mod2
 
 # Automatically quit and reopen Amethyst.
