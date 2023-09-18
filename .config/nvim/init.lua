@@ -4,6 +4,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- netrw ignore
+vim.g.netrw_list_hide= '.*.swp$,.DS_Store,node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*.git,^..=/=$'
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
