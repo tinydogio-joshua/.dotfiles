@@ -51,6 +51,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Default Editors
+export EDITOR="vim"
+export VISUAL="vim"
+
 # Configure Prompt
 precmd() { print "" }
 preexec() { print "" }
