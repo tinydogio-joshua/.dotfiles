@@ -392,3 +392,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- Custom Keymaps
+vim.keymap.set('n', '<leader><space>', vim.cmd.buffers, { desc = 'List open buffers.' })
