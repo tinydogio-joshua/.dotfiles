@@ -51,5 +51,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Always have starship last.
-eval "$(starship init zsh)"
+NEWLINE=$'\n'
+PROMPT="%F{magenta}%~%f${NEWLINE}↪ "
