@@ -51,5 +51,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Configure Prompt
+precmd() { print "" }
+preexec() { print "" }
 NEWLINE=$'\n'
 PROMPT="%F{magenta}%~%f${NEWLINE}↪ "
