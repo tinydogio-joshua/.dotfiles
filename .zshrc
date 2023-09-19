@@ -26,6 +26,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # ============================================================================================
 
+# Configure Aliases
 alias ll='ls -lG'
 alias lla='ls -laG'
 alias cat='bat --paging=never'
@@ -34,22 +35,19 @@ alias vim='nvim'
 alias rbrew='/usr/local/bin/brew'
 alias pipa='source .env/bin/activate'
 
+# Configure Rust
 export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
 
+# Configure ASDF
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 
-# autoload -Uz compinit; compinit
-# zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+# Configure Autocomplete
+autoload -Uz compinit; compinit
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
-
-# fzf
-export FZF_DEFAULT_COMMAND="fd --type file --color=always"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--ansi"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Default Editors
 export EDITOR="vim"
