@@ -1,4 +1,3 @@
-# Dotfiles
+# 🧑‍💻 Dotfiles
 
-_Wallpapers have been collected over time. Most are currently from Unsplash. I believe you can get more details using the file name to find them._
-
+> 🚨 I'm currently in the process of minimizing this. In the unlikely event you're using this, know some things may disappear.
