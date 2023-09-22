@@ -58,3 +58,10 @@ precmd() { print "" }
 preexec() { print "" }
 NEWLINE=$'\n'
 PROMPT="%F{magenta}%~%f${NEWLINE}↪ "
+
+# bun completions
+[ -s "/Users/jshamid6/.bun/_bun" ] && source "/Users/jshamid6/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

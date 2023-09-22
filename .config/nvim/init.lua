@@ -65,6 +65,13 @@ require('lazy').setup({
     end,
   },
 
+  -- Markdown Preview
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = ":call mkdp#util#install()",
+  },
+
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
