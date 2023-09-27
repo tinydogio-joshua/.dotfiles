@@ -34,6 +34,7 @@ alias dev='python3 -m http.server'
 alias vim='nvim'
 alias rbrew='/usr/local/bin/brew'
 alias pipa='source .env/bin/activate'
+alias gs='cat package.json | jq .scripts'
 
 # Configure Rust
 export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
