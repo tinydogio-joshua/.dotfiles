@@ -61,7 +61,7 @@ NEWLINE=$'\n'
 PROMPT="%F{magenta}%~%f${NEWLINE}↪ "
 
 # bun completions
-[ -s "/Users/jshamid6/.bun/_bun" ] && source "/Users/jshamid6/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
