@@ -117,6 +117,18 @@ vim.o.hlsearch = false
 vim.wo.number = true
 vim.o.relativenumber = true
 
+-- Set Indentation and other Text Settings
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.bo.softtabstop = 2
+
+vim.opt.smartindent = true
+vim.opt.updatetime = 50
+vim.opt.wrap = false
+
+vim.opt.scrolloff = 8
+
 -- Hide Mode Indicator
 vim.o.showmode = false
 
