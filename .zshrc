@@ -84,3 +84,6 @@ setopt EXTENDED_HISTORY  # record command start time
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# bun completions
+[ -s "/Users/jshamid6/.bun/_bun" ] && source "/Users/jshamid6/.bun/_bun"
