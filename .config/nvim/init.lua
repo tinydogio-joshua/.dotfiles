@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.g.netrw_list_hide = '.*.swp$,.DS_Store,node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*.git,^..=/=$'
+vim.o.wildignore = '.*.swp$,.DS_Store,*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*.git,^..=/=$'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -165,6 +166,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Find
+vim.opt.path = vim.opt.path + "**"
 
 -- [[ Basic Keymaps ]]
 
