@@ -169,3 +169,19 @@ restore-layouts-on-launch: true
 
 # true to display some optional debug information in the layout HUD (default false).
 debug-layout-info: false
+
+throw-space-1:
+  mod: mod1
+  key: 7
+
+throw-space-2:
+  key: 8
+  mod: mod1
+
+throw-space-3:
+  key: 9
+  mod: mod1
+
+throw-space-4:
+  key: 0
+  mod: mod1
