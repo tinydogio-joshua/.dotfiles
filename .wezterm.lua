@@ -14,6 +14,7 @@ end
 
 config.color_scheme = 'rose-pine-moon'
 config.font = wezterm.font 'JetBrains Mono'
+config.line_height = 1.25
 
 local padding = '32px'
 
