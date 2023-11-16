@@ -87,3 +87,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # bun completions
 [ -s "/Users/jshamid6/.bun/_bun" ] && source "/Users/jshamid6/.bun/_bun"
+
+listDevelopment() {
+  ll ~/Development
+}
+zle -N listDevelopment listDevelopment
+bindkey '^O' listDevelopment
