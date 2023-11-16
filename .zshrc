@@ -58,7 +58,7 @@ export VISUAL="vim"
 precmd() { print "" }
 preexec() { print "" }
 NEWLINE=$'\n'
-PROMPT="%F{magenta}%~%f${NEWLINE}↪ "
+PROMPT="%F{yellow}%~%f${NEWLINE}→ "
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
