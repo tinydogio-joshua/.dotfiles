@@ -99,11 +99,11 @@ require('lazy').setup({
   },
 
   -- lazy.nvim
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
-  },
+  -- {
+  -- "m4xshen/hardtime.nvim",
+  -- dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  -- opts = {}
+  -- },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
