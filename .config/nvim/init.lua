@@ -36,17 +36,13 @@ require('lazy').setup({
     },
   },
 
-  -- Lua
+  -- gen.nvim
   {
-    "folke/twilight.nvim",
-    opts = {
-      dimming = {
-        alpha = 0.5,
-      }
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    "David-Kunz/gen.nvim",
+    config = function()
+      vim.keymap.set("v", "<leader>]", ":Gen<CR>")
+      vim.keymap.set("n", "<leader>]", ":Gen<CR>")
+    end,
   },
 
   {
