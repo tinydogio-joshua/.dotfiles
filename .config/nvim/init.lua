@@ -61,18 +61,15 @@ require('lazy').setup({
     },
   },
 
+  -- Theme
   {
-    -- Theme
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    "sainnhe/everforest",
     config = function()
-      require('rose-pine').setup {
-        dark_variant = 'moon',
-        disable_background = true,
-        variant = 'moon'
-      }
-      vim.cmd.colorscheme 'rose-pine'
-    end,
+      vim.opt.termguicolors = true
+      vim.g.everforest_background = "medium"
+      vim.g.everforest_disable_italic_comment = true
+      vim.cmd.colorscheme("everforest")
+    end
   },
 
   -- Markdown Preview

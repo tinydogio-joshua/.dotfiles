@@ -12,7 +12,7 @@ end
 
 -- This is where you actually apply your config choices
 
-config.color_scheme = 'rose-pine-moon'
+config.color_scheme = 'Everforest Dark (Gogh)'
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 12.5
 config.line_height = 1.25
