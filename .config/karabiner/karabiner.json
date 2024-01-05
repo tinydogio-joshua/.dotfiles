@@ -353,6 +353,35 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "software_function": {
+                                            "set_mouse_cursor_position": {
+                                                "screen": 0,
+                                                "x": "98%",
+                                                "y": 16
+                                            }
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
