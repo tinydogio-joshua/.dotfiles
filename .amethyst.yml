@@ -12,7 +12,7 @@ layouts:
   - tall
   # - floating
   # - tall-right
-  # - wide
+  - wide
   # - two-pane
   # - middle-wide
   # - 3column-left
@@ -20,8 +20,8 @@ layouts:
   # - 3column-right
   # - 4column-left
   # - 4column-right
-  # - column
   # - row
+  # - column
   # - widescreen-tall
   # - widescreen-tall-right
   # - bsp
