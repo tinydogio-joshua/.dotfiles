@@ -361,7 +361,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "backslash",
+                                    "key_code": "delete_or_backspace",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -377,29 +377,6 @@
                                                 "y": 16
                                             }
                                         }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "sh ~/close-notifications-mac.sh"
                                     }
                                 ],
                                 "type": "basic"
