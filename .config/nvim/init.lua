@@ -192,6 +192,9 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Buffer List
 vim.keymap.set('n', '<leader>b', ":ls<CR>:b ", { silent = true })
 
+-- Open netrw
+vim.keymap.set('n', '<leader>f', ":Ex<CR>", { noremap = true })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
