@@ -45,6 +45,21 @@ require('lazy').setup({
     end,
   },
 
+  -- Which Key
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -89,6 +104,12 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+  },
+
+  -- Twilight Dimmer
+  {
+    "folke/twilight.nvim",
+    opts = {}
   },
 
   -- lazy.nvim
