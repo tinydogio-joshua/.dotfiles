@@ -40,7 +40,7 @@ require('lazy').setup({
   {
     "David-Kunz/gen.nvim",
     opts = {
-      model = "codellama:latest"
+      model = "codellama"
     },
     config = function()
       vim.keymap.set("v", "<leader>]", ":Gen<CR>")
