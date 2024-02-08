@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Open Gemini in Default Browser",
+                        "description": "Open Google in Default Browser",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -38,7 +38,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_option"
+                                        "key_code": "left_command"
                                     }
                                 ],
                                 "type": "basic"
@@ -77,11 +77,85 @@
                                     ],
                                     "to_if_invoked": [
                                         {
-                                            "shell_command": "sh ~/open-gemini.sh"
+                                            "shell_command": "sh ~/open-google.sh"
                                         },
                                         {
                                             "set_variable": {
                                                 "name": "right_option_pressed",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open Bard in Default Browser",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "right_command_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 200
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "right_command_pressed",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "right_command"
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "right_command_pressed",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "shell_command": "sh ~/open-bard.sh"
+                                        },
+                                        {
+                                            "set_variable": {
+                                                "name": "right_command_pressed",
                                                 "value": 0
                                             }
                                         }
