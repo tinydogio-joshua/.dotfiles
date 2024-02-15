@@ -1,3 +1,5 @@
+import = ["~/.config/alacritty/themes/themes/tokyo-night-storm.toml"]
+
 [font]
 bold = { family = "JetBrains Mono", style = "Bold" }
 bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
