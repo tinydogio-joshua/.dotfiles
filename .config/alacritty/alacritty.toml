@@ -1,0 +1,16 @@
+[font]
+bold = { family = "JetBrains Mono", style = "Bold" }
+bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+normal = { family = "JetBrains Mono", style = "Regular" }
+offset.y = 5
+size = 12.0
+
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+padding = { x = 24, y = 24 }
