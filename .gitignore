@@ -1,4 +1,5 @@
 .DS_Store
 .config/iterm2/AppSupport
+.config/nvim/lazy-lock.json
 .config/nvim/plugin/packer_compiled.lua
 
