@@ -66,6 +66,10 @@ PROMPT="%F{yellow}%~%f${NEWLINE}→ "
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+
 
 # History
 # the detailed meaning of the below three variable can be found in `man zshparam`.
@@ -99,3 +103,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 clear
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/jshamid6/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
