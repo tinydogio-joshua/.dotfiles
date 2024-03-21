@@ -16,3 +16,4 @@ args = ["-l"]
 decorations = "buttonless"
 dynamic_padding = true
 padding = { x = 24, y = 24 }
+option_as_alt = "Both"
