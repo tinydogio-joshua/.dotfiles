@@ -153,16 +153,16 @@ follow-space-thrown-windows: true
 window-resize-step: 2
 
 # Padding to apply between windows and the left edge of the screen (in px, default 0).
-screen-padding-left: 2
+screen-padding-left: 16
 
 # Padding to apply between windows and the right edge of the screen (in px, default 0).
-screen-padding-right: 2
+screen-padding-right: 16
 
 # Padding to apply between windows and the top edge of the screen (in px, default 0).
-screen-padding-top: 2
+screen-padding-top: 16
 
 # Padding to apply between windows and the bottom edge of the screen (in px, default 0).
-screen-padding-bottom: 2
+screen-padding-bottom: 16
 
 # true to maintain layout state across application executions (default true).
 restore-layouts-on-launch: true

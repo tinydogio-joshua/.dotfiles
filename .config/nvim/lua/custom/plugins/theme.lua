@@ -1,9 +1,12 @@
 return {
-  'sainnhe/everforest',
+  'rose-pine/neovim',
+  name = 'rose-pine',
   config = function()
-    vim.opt.termguicolors = true
-    vim.g.everforest_background = 'medium'
-    vim.g.everforest_disable_italic_comment = true
-    vim.cmd.colorscheme 'everforest'
+    require('rose-pine').setup {
+      dark_variant = 'moon',
+      disable_background = true,
+      variant = 'dawn',
+    }
+    vim.cmd.colorscheme 'rose-pine'
   end,
 }
