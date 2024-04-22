@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/themes/rose-pine-dawn.toml"]
+import = ["~/.config/alacritty/themes/themes/rose-pine-moon.toml"]
 
 [font]
 bold = { family = "SF Mono", style = "Bold" }
