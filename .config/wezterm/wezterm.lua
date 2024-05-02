@@ -42,7 +42,7 @@ wezterm.on("update-status", function(window, pane)
 	if window:is_focused() then
 		overrides.window_background_opacity = 0.98
 	else
-		overrides.window_background_opacity = 0.85
+		overrides.window_background_opacity = 0.88
 	end
 	window:set_config_overrides(overrides)
 end)
