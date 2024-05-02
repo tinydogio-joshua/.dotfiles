@@ -22,7 +22,7 @@ config.window_frame = window_frame
 config.font = wezterm.font("SF Mono")
 config.font_size = 14
 config.line_height = 1.4
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.98
 config.macos_window_background_blur = 50
 
 local padding = "32px"
@@ -40,7 +40,7 @@ config.window_decorations = "RESIZE"
 wezterm.on("update-status", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 	if window:is_focused() then
-		overrides.window_background_opacity = 0.95
+		overrides.window_background_opacity = 0.98
 	else
 		overrides.window_background_opacity = 0.85
 	end
