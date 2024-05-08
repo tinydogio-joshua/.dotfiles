@@ -70,6 +70,9 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 
+# Aider Chat
+export OLLAMA_API_BASE=http://127.0.0.1:11434
+alias ai='aider --model ollama/llama3:latest'
 
 # History
 # the detailed meaning of the below three variable can be found in `man zshparam`.
@@ -90,7 +93,7 @@ export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # bun completions
-[ -s "/Users/jshamid6/.bun/_bun" ] && source "/Users/jshamid6/.bun/_bun"
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
 listDevelopment() {
   ll ~/Development
@@ -101,9 +104,11 @@ bindkey '^O' listDevelopment
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-clear
-
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jshamid6/.rd/bin:$PATH"
+export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

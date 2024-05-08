@@ -5,8 +5,8 @@ return {
     require('rose-pine').setup {
       dark_variant = 'moon',
       disable_background = true,
-      -- variant = 'moon',
-      variant = 'dawn',
+      variant = 'moon',
+      -- variant = 'dawn',
     }
     vim.cmd.colorscheme 'rose-pine'
   end,

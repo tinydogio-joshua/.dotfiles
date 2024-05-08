@@ -12,8 +12,8 @@ end
 
 -- This is where you actually apply your config choices
 
-local colors = require("lua/rose-pine-dawn").colors()
-local window_frame = require("lua/rose-pine-dawn").window_frame()
+local colors = require("lua/rose-pine-moon").colors()
+local window_frame = require("lua/rose-pine-moon").window_frame()
 
 config.colors = colors
 config.window_frame = window_frame
@@ -40,9 +40,9 @@ config.window_decorations = "RESIZE"
 wezterm.on("update-status", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 	if window:is_focused() then
-		overrides.window_background_opacity = 0.98
+		overrides.window_background_opacity = 0.88
 	else
-		overrides.window_background_opacity = 0.78
+		overrides.window_background_opacity = 0.8
 	end
 	window:set_config_overrides(overrides)
 end)
