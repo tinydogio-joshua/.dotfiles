@@ -40,9 +40,9 @@ config.window_decorations = "RESIZE"
 wezterm.on("update-status", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 	if window:is_focused() then
-		overrides.window_background_opacity = 0.01
+		overrides.window_background_opacity = 0.75
 	else
-		overrides.window_background_opacity = 0.01
+		overrides.window_background_opacity = 0.5
 	end
 	window:set_config_overrides(overrides)
 end)
