@@ -7,10 +7,8 @@ return {
 			lsp_fallback = true,
 		},
 		formatters_by_ft = {
-			go = { "goimports", "gofmt" },
 			lua = { "stylua" },
 			javascript = { "eslint" },
-			python = { "isort", "black" },
 			typescript = { "eslint" },
 			rust = { "rustfmt" },
 		},
