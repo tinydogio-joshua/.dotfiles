@@ -15,6 +15,21 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
 			require("telescope").setup({
+				defaults = {
+					file_ignore_patterns = {
+						".git",
+						"build",
+						"dist",
+						"node_modules",
+						"out",
+						"target",
+					},
+				},
+				pickers = {
+					find_files = {
+						hidden = true,
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
