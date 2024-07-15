@@ -13,3 +13,6 @@ vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", {})
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", {})
 
 vim.keymap.set("n", "<leader><Esc>", ":nohlsearch<CR>")
+
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
