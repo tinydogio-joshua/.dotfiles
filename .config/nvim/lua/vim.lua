@@ -20,6 +20,7 @@ vim.opt.hlsearch = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.cursorline = true
+vim.opt.wrap = false
 
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", {})
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", {})
@@ -30,3 +31,4 @@ vim.keymap.set("n", "<leader><Esc>", ":nohlsearch<CR>")
 
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+p')
+
