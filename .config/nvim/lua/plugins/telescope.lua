@@ -17,12 +17,12 @@ return {
 			require("telescope").setup({
 				defaults = {
 					file_ignore_patterns = {
-						".git",
-						"build",
-						"dist",
-						"node_modules",
-						"out",
-						"target",
+						".git/",
+						"build/",
+						"dist/",
+						"node_modules/",
+						"out/",
+						"target/",
 					},
 				},
 				pickers = {
