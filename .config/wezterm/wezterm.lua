@@ -1,28 +1,17 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
-
--- This table will hold the configuration.
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
+-- config.color_scheme = "Everforest Dark (Gogh)"
+config.color_scheme = "Ayu Mirage"
 
-local colors = require("lua/rose-pine-moon").colors()
-local window_frame = require("lua/rose-pine-moon").window_frame()
-
-config.colors = colors
-config.window_frame = window_frame
-
--- config.color_scheme = 'Everforest Dark (Gogh)'
 config.font = wezterm.font("SF Mono")
 config.font_size = 14
-config.line_height = 1.4
-config.macos_window_background_blur = 100
+config.line_height = 1.5
+-- config.macos_window_background_blur = 100
 
 local padding = "32px"
 
@@ -36,14 +25,14 @@ config.window_padding = {
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
-wezterm.on("update-status", function(window, pane)
-	local overrides = window:get_config_overrides() or {}
-	if window:is_focused() then
-		overrides.window_background_opacity = 1.0
-	else
-		overrides.window_background_opacity = 1.0
-	end
-	window:set_config_overrides(overrides)
-end)
+-- wezterm.on("update-status", function(window, pane)
+-- 	local overrides = window:get_config_overrides() or {}
+-- 	if window:is_focused() then
+-- 		overrides.window_background_opacity = 1.0
+-- 	else
+-- 		overrides.window_background_opacity = 1.0
+-- 	end
+-- 	window:set_config_overrides(overrides)
+-- end)
 
 return config
