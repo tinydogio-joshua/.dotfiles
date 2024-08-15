@@ -5,8 +5,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- config.color_scheme = "Everforest Dark (Gogh)"
-config.color_scheme = "Ayu Mirage"
+config.color_scheme = "carbonfox"
 
 config.font = wezterm.font("SF Mono")
 config.font_size = 14
