@@ -13,7 +13,18 @@ matches:
   - trigger: "-:story"
     replace: "Story\n\n\n---\n\nBackground\n\n\n---\n\nWhat Needs to Be Done\n\n\n---\n\nMisc\n"
 
-  # But matches can also be dynamic:
+  # Daily Summary - Subject
+  - trigger: "-:dss"
+    replace: "{{mydate}} Update"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Daily Summary - Body
+  - trigger: "-:dsb"
+    replace: "Howdy 👋\n\nBelow you will find a summary of the team's activities for today. Please let me know if you have any questions.\n\n* \n\nI hope you've had a great day,\n\nJoshua"
 
   # Print the current date
   - trigger: "-:date"
