@@ -30,6 +30,14 @@ matches:
   - trigger: "-:status"
     replace: "Current Focus:\n\nTeam Member = Task\n\n---Out:\n\nTeam Member = Day"
 
+  # Coffee Chat - Subject
+  - trigger: "-:ccs"
+    replace: "Coffee Chats ☕️"
+
+  # Coffee Chat - Body
+  - trigger: "-:ccb"
+    replace: "Hi all,\n\nThe coffee chat pairing for this week can be found below. We’ll be working through different ways of handling this in an automated fashion over time. If you’ve found yourself meeting the same person more than once in a row, please let the group know so we can make arrangements.\n\nPlease contact the other people in your grouping below and make arrangements.\n\nThe Coffee Chat Crew ☕️\n\n\n-- pairs --\n"
+
   # Print the current date
   - trigger: "-:date"
     replace: "{{mydate}}"
