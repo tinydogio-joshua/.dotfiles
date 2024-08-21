@@ -47,9 +47,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
-export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$WASMTIME_HOME/bin:$PATH"
-
 # Default Editors
 export EDITOR="vim"
 export VISUAL="vim"
@@ -70,10 +67,6 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 
-# Aider Chat
-export OLLAMA_API_BASE=http://127.0.0.1:11434
-alias ai='aider --model ollama/llama3:latest'
-
 # History
 # the detailed meaning of the below three variable can be found in `man zshparam`.
 export HISTFILE=~/.histfile
@@ -92,9 +85,6 @@ setopt EXTENDED_HISTORY  # record command start time
 export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
-
 listDevelopment() {
   ll ~/Development
 }
@@ -112,3 +102,6 @@ eval "$(pyenv init -)"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Launch Tmux Session
+bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
