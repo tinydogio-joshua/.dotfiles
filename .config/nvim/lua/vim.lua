@@ -1,3 +1,6 @@
+vim.g.netrw_list_hide = ".*.swp$,.DS_Store,node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*.git,^..=/=$"
+vim.o.wildignore = ".*.swp$,.DS_Store,*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*.git,^..=/=$"
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -31,4 +34,3 @@ vim.keymap.set("n", "<leader><Esc>", ":nohlsearch<CR>")
 
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+p')
-
