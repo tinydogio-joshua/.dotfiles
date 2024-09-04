@@ -47,6 +47,19 @@ matches:
         params:
           format: "%Y-%m-%d"
 
+  # Team Sync - Subject
+  - trigger: "-:tss"
+    replace: "{{mydate}} Team Sync Agenda"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Team Sync - Body
+  - trigger: "-:tsb"
+    replace: "Hi All,\n\nThis is the agenda for today’s meeting:\n\n* Parking Lot – Unaccounted for Items.\n\nJoshua"
+
   # Print the output of a shell command
   - trigger: "-:shell"
     replace: "{{output}}"
