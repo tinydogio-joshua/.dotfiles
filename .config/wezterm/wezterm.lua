@@ -5,11 +5,13 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "carbonfox"
+config.color_scheme = "Everforest Dark (Gogh)"
 
-config.font = wezterm.font("SF Mono")
-config.font_size = 14
-config.line_height = 1.5
+config.font = wezterm.font({
+	family = "JetBrains Mono",
+})
+config.font_size = 15
+config.line_height = 1.3
 -- config.macos_window_background_blur = 100
 
 local padding = "32px"
