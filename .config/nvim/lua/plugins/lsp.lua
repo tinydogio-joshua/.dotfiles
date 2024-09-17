@@ -32,7 +32,7 @@ return {
 					"marksman",
 					"rust_analyzer",
 					"taplo",
-					"tsserver",
+					"ts_ls",
 					"yamlls",
 				},
 			})
