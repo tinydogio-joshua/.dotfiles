@@ -7,6 +7,9 @@
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
+#
+# HTML Emojis: https://gist.github.com/oliveratgithub/0bf11a9aff0d6da7b46f1490f86a71eb/
+
 matches:
 
   # User story
@@ -24,7 +27,20 @@ matches:
 
   # Daily Summary - Body
   - trigger: "-:dsb"
-    replace: "Howdy 👋\n\nBelow you will find a summary of the team's activities for today. Please let me know if you have any questions.\n\n* \n\nI hope you've had a great day,\n\nJoshua"
+    html: "Howdy &#128075;<br /><br />Below you will find a summary of the team's activities for today. Please let me know if you have any questions.<br /><br /><ul><li></li></ul><br />I hope you've had a great day,<br /><br />Joshua"
+
+  # Weekly Summary - Subject
+  - trigger: "-:wss"
+    replace: "{{subject}}"
+    vars:
+      - name: subject
+        type: shell
+        params:
+          cmd: "echo \"Weekly Summary - Starting: $(date -v +Mon '+%Y-%m-%d') | Ending: $(date -v +Fri '+%Y-%m-%d')\""
+
+  # Weekly Summary - Body
+  - trigger: "-:wsb"
+    html: "Howdy &#128075;<br /><br />Below you will find a summary of the team's activities for this week. Please let me know if you have any questions.<br /><br /><ul><li><strong>MONDAY</strong><br />&nbsp;</li><li><strong>TUESDAY</strong><br />&nbsp;</li><li><strong>WEDNESDAY</strong><br />&nbsp;</li><li><strong>THURSDAY</strong><br />&nbsp;</li><li><strong>FRIDAY</strong><br />&nbsp;</li></ul><br />I hope you've had a great day,<br /><br />Joshua"
 
   # Messaging - Pinned Team Status
   - trigger: "-:status"
