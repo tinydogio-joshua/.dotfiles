@@ -40,11 +40,7 @@ matches:
 
   # Weekly Summary - Body
   - trigger: "-:wsb"
-    html: "Howdy &#128075;<br /><br />Below you will find a summary of the team's activities for this week. Please let me know if you have any questions.<br /><br /><ul><li><strong>MONDAY</strong><br />&nbsp;</li><li><strong>TUESDAY</strong><br />&nbsp;</li><li><strong>WEDNESDAY</strong><br />&nbsp;</li><li><strong>THURSDAY</strong><br />&nbsp;</li><li><strong>FRIDAY</strong><br />&nbsp;</li></ul><br />I hope you've had a great day,<br /><br />Joshua"
-
-  # Messaging - Pinned Team Status
-  - trigger: "-:status"
-    replace: "Current Focus:\n\nTeam Member = Task\n\n---Out:\n\nTeam Member = Day"
+    html: "Howdy &#128075;<br /><br />Below you will find a summary of the team's activities for this week. Please let me know if you have any questions.<br /><br /><ul><li><strong>MONDAY</strong><br />&nbsp;</li><li><strong>TUESDAY</strong><br />&nbsp;</li><li><strong>WEDNESDAY</strong><br />&nbsp;</li><li><strong>THURSDAY</strong><br />&nbsp;</li><li><strong>FRIDAY</strong><br />&nbsp;</li></ul><br />I hope you've had a great week,<br /><br />Joshua"
 
   # Coffee Chat - Subject
   - trigger: "-:ccs"
@@ -52,7 +48,7 @@ matches:
 
   # Coffee Chat - Body
   - trigger: "-:ccb"
-    replace: "Hi all,\n\nThe coffee chat pairing for this week can be found below. We’ll be working through different ways of handling this in an automated fashion over time. If you’ve found yourself meeting the same person more than once in a row, please let the group know so we can make arrangements.\n\nPlease contact the other people in your grouping below and make arrangements.\n\nThe Coffee Chat Crew ☕️\n\n\n-- pairs --\n"
+    html: "Hi all,<br /><br />The coffee chat pairing for this week can be found below. If you've found yourself meeting the same person more than once in a row, please let the group know.<br /><br />Please contact the other people in your grouping below to schedule your Coffee Chat.<br /><br />The Coffee Chat Crew &#9749;<br /><br /><br />-- pairs --<br /><br />"
 
   # Print the current date
   - trigger: "-:date"
@@ -74,13 +70,5 @@ matches:
 
   # Team Sync - Body
   - trigger: "-:tsb"
-    replace: "Hi All,\n\nThis is the agenda for today’s meeting:\n\n* Parking Lot – Unaccounted for Items.\n\nJoshua"
+    html: "Hi All,<br /><br />This is the agenda for today's meeting:<br /><br /><ul><li></li><li>Parking Lot - Unaccounted for Items.</li></ul><br />Joshua"
 
-  # Print the output of a shell command
-  - trigger: "-:shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo 'Hello from your shell'"
