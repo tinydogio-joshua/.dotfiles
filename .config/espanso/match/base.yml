@@ -36,7 +36,7 @@ matches:
       - name: subject
         type: shell
         params:
-          cmd: "echo \"Weekly Summary - Starting: $(date -v +Mon '+%Y-%m-%d') | Ending: $(date -v +Fri '+%Y-%m-%d')\""
+          cmd: "echo \"Weekly Summary - Starting: $(date -v -Mon '+%Y-%m-%d') | Ending: $(date -v +Fri '+%Y-%m-%d')\""
 
   # Weekly Summary - Body
   - trigger: "-:wsb"
