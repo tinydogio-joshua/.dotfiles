@@ -1,5 +1,6 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/joshua/.zsh/completions:"* ]]; then export FPATH="/Users/joshua/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":~/.zsh/completions:"* ]]; then export FPATH="~/.zsh/completions:$FPATH"; fi
+
 # ============================================================================================
 # Found: https://unix.stackexchange.com/a/614203
 # vi mode
@@ -105,9 +106,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jshamid6/.rd/bin:$PATH"
+export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Deno
+. "~/.deno/env"
 
 # Launch Tmux Session
 bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
-. "/Users/joshua/.deno/env"
