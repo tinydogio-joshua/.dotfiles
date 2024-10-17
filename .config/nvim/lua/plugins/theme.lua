@@ -1,9 +1,8 @@
 return {
-	"sainnhe/everforest",
+	"shaunsingh/nord.nvim",
+	lazy = false,
+	priority = 1000,
 	config = function()
-		vim.opt.termguicolors = true
-		vim.g.everforest_background = "medium"
-		vim.g.everforest_disable_italic_comment = true
-		vim.cmd.colorscheme("everforest")
+		vim.cmd("colorscheme nord")
 	end,
 }
