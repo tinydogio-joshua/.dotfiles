@@ -9,6 +9,8 @@ fi
 
 if ! tmux has-session -t "$session_name"; then
   tmux new-session -d -s "$session_name"
+  clear
+  vim .
 fi
 
 tmux attach -t "$session_name"
