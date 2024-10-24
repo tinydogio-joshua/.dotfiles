@@ -109,8 +109,8 @@ eval "$(pyenv init -)"
 export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-# Deno
-. "$HOME/.deno/env"
-
 # Launch Tmux Session
 bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
+
+# Deno
+. "$HOME/.deno/env"
