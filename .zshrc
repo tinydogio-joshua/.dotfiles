@@ -110,7 +110,7 @@ export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Deno
-. "~/.deno/env"
+. "$HOME/.deno/env"
 
 # Launch Tmux Session
 bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
