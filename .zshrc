@@ -1,6 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":~/.zsh/completions:"* ]]; then export FPATH="~/.zsh/completions:$FPATH"; fi
-
 # ============================================================================================
 # Found: https://unix.stackexchange.com/a/614203
 # vi mode
@@ -111,6 +108,3 @@ export PATH="~/.rd/bin:$PATH"
 
 # Launch Tmux Session
 bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
-
-# Deno
-. "$HOME/.deno/env"
