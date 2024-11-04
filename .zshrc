@@ -88,12 +88,6 @@ setopt EXTENDED_HISTORY  # record command start time
 export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-listDevelopment() {
-  ll ~/Development
-}
-zle -N listDevelopment listDevelopment
-bindkey '^O' listDevelopment
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
@@ -105,6 +99,4 @@ eval "$(pyenv init -)"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Launch Tmux Session
-# bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
+#
