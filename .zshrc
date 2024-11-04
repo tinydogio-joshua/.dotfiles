@@ -107,4 +107,4 @@ export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Launch Tmux Session
-bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
+# bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
