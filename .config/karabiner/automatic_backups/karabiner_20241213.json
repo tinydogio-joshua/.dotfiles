@@ -10,7 +10,6 @@
                 "rules": [
                     {
                         "description": "Open Gemini in Default Browser",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
