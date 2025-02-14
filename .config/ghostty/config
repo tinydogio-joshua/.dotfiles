@@ -5,7 +5,8 @@ font-size = 14
 
 mouse-hide-while-typing = true
 
-theme = nord
+# theme = nord
+theme = "Seafoam Pastel"
 
 window-colorspace = "display-p3"
 window-padding-x = 16
