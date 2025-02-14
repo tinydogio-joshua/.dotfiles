@@ -1,6 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
-#
 # ============================================================================================
 # Found: https://unix.stackexchange.com/a/614203
 # vi mode
@@ -102,5 +99,4 @@ eval "$(pyenv init -)"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-#
-. "$HOME/.deno/env"
+
