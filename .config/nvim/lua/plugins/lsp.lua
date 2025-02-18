@@ -19,10 +19,8 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"bashls",
-					"clangd",
 					"cssls",
 					"css_variables",
-					"custom_elements_ls",
 					"dockerls",
 					"eslint",
 					"emmet_language_server",
