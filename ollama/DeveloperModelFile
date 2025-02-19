@@ -2,6 +2,7 @@
 # Run `ollama create developer -f ./DeveloperModelfile` and then `ollama run developer` and enter a topic
 
 FROM starcoder2
+FROM qwen2.5-coder:7b
 PARAMETER temperature 1
 
 SYSTEM """

@@ -1,12 +1,12 @@
 adjust-cell-height = 35%
 
 font-family = "JetBrains Mono"
-font-size = 14
+font-size = 16
 
 mouse-hide-while-typing = true
 
 # theme = nord
-theme = "Seafoam Pastel"
+theme = "dark:rose-pine-moon,light:rose-pine-dawn"
 
 window-colorspace = "display-p3"
 window-padding-x = 16
