@@ -47,8 +47,9 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			vim.keymap.set("n", "gD", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set({ "n" }, "<leader>rn", vim.lsp.buf.rename, {})
 		end,
 	},
 }
