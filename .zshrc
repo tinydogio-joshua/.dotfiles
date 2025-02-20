@@ -52,7 +52,13 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 # Configure Prompt
-precmd() { print "" }
+FIRST_RUN=true
+precmd() {
+  if ! $FIRST_RUN; then
+    print ""
+  fi
+  FIRST_RUN=false
+}
 preexec() { print "" }
 NEWLINE=$'\n'
 PROMPT="%F{yellow}%~%f${NEWLINE}→ "
