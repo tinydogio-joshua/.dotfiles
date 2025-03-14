@@ -80,3 +80,7 @@ matches:
   - trigger: "-:tstest"
     replace: "\"itest\": \"npx tsx --test $(find . -name \\\"*.itest.ts\\\")\",\n\"itest:only\": \"npx tsx --test --test-only $(find . -name \\\"*.itest.ts\\\")\",\n\"itest:watch\": \"npx tsx --test --watch $(find . -name \\\"*.itest.ts\\\")\",\n\"itest:watch:only\": \"npx tsx --test --test-only --watch $(find . -name \\\"*.itest.ts\\\")\",\n\"test\": \"npx tsx --test $(find . -name \\\"*.test.ts\\\")\",\n\"test:only\": \"npx tsx --test --test-only $(find . -name \\\"*.test.ts\\\")\",\n\"test:watch\": \"npx tsx --test --watch $(find . -name \\\"*.test.ts\\\")\",\n\"test:watch:only\": \"npx tsx --test --test-only --watch $(find . -name \\\"*.test.ts\\\")\"\n"
 
+  # JavaScript - Add Testing to Project
+  - trigger: "-:jstest"
+    replace: "\"test\": \"node --test\",\n\"test:only\": \"node --test --test-only\",\n\"test:watch\": \"node --test --watch\",\n\"test:watch:only\": \"node --test --test-only --watch\"\n"
+
