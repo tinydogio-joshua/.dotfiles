@@ -9,24 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "Right Command to Meh",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift",
-                                        "modifiers": ["right_option", "right_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Open Gemini in Default Browser",
                         "enabled": false,
                         "manipulators": [
