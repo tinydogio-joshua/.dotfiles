@@ -9,27 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "Meh+m to cmd+tab",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["right_shift", "right_control", "right_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": ["right_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Right Command to Meh",
                         "manipulators": [
                             {
