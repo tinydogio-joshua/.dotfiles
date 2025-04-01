@@ -31,9 +31,6 @@ alias ll='ls -lG'
 alias lla='ls -laG'
 alias cat='bat --paging=never'
 alias dev='python3 -m http.server'
-alias rbrew='/usr/local/bin/brew'
-alias pipa='source .env/bin/activate'
-alias gs='cat package.json | jq .scripts'
 
 # Configure Rust
 export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
@@ -99,7 +96,6 @@ export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

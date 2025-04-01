@@ -10,7 +10,6 @@
                 "rules": [
                     {
                         "description": "Meh+m to cmd+tab",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
