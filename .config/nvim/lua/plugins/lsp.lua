@@ -1,12 +1,18 @@
 return {
-	"neovim/nvim-lspconfig",
-	dependencies = {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+	{
+		"neovim/nvim-lspconfig",
 	},
-	config = function()
-		require("mason").setup({})
-		require("mason-lspconfig").setup({
+	{
+		"mason-org/mason.nvim",
+		opts = {},
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"mason-org/mason.nvim",
+		},
+		opts = {
 			ensure_installed = {
 				"bashls",
 				"cssls",
@@ -14,6 +20,7 @@ return {
 				"dockerls",
 				"eslint",
 				"emmet_language_server",
+				"gopls",
 				"html",
 				"jsonls",
 				"lua_ls",
@@ -23,22 +30,6 @@ return {
 				"ts_ls",
 				"yamlls",
 			},
-		})
-
-		local lspconfig = require("lspconfig")
-		require("mason-lspconfig").setup_handlers({
-			function(server)
-				lspconfig[server].setup({})
-			end,
-		})
-
-		lspconfig.eslint.setup({
-			on_attach = function(_, bufnr)
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "EslintFixAll",
-				})
-			end,
-		})
-	end,
+		},
+	},
 }
