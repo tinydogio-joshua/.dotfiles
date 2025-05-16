@@ -40,8 +40,8 @@ autoload -Uz compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # Default Editors
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Configure Prompt
 FIRST_RUN=true
@@ -58,9 +58,6 @@ PROMPT="%F{yellow}%~%f${NEWLINE}→ "
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# golang
-export PATH="$HOME/go/bin:$PATH"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -68,6 +65,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # deno
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# golang
+export PATH="$HOME/go/bin:$PATH"
 
 # Java
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
@@ -87,14 +87,17 @@ setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately aft
 setopt EXTENDED_HISTORY  # record command start time
 
 # FZF + RipGrep
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-cwd-prefix'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export FZF_DEFAULT_COMMAND='fd --full-path "$HOME/Development" --type d --strip-cwd-prefix'
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 autoload -U +X bashcompinit && bashcompinit
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jshamid6/.rd/bin:$PATH"
+export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Postgres
