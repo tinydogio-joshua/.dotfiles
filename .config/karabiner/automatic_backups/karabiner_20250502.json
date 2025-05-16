@@ -32,7 +32,6 @@
                     },
                     {
                         "description": "Right Command to Meh",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

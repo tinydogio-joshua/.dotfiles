@@ -11,7 +11,7 @@ config.font = wezterm.font({
 	family = "JetBrains Mono",
 })
 config.font_size = 15
-config.line_height = 1.3
+config.line_height = 1.4
 -- config.macos_window_background_blur = 100
 
 local padding = "32px"
