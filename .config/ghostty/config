@@ -5,8 +5,7 @@ font-size = 16
 
 mouse-hide-while-typing = true
 
-# theme = nord
-theme = "dark:rose-pine-moon,light:rose-pine-dawn"
+theme = "dark:everforest-dark,light:everforest-light"
 
 window-colorspace = "display-p3"
 window-padding-x = 16
@@ -14,6 +13,6 @@ window-padding-y = 16
 window-padding-balance = true
 window-decoration = false
 
-background-opacity = 0.5
-background-blur = 92
+background-opacity = 1
+# background-blur = 92
 
