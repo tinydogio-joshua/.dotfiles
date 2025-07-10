@@ -97,7 +97,7 @@ source <(fzf --zsh)
 autoload -U +X bashcompinit && bashcompinit
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="~/.rd/bin:$PATH"
+export PATH="/Users/jshamid6/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Postgres
