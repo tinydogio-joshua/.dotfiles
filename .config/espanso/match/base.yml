@@ -14,7 +14,7 @@ matches:
 
   # User story
   - trigger: "-:story"
-    replace: "Story\n\n\n---\n\nBackground\n\n\n---\n\nWhat Needs to Be Done\n\n\n---\n\nMisc\n"
+    replace: "Story and What Needs to Be Done\nAs a __USER__, I would like __THE_DELIVERABLE__, so that __A_CERTAIN_GOAL_IS_ACCOMPLISHED__.\n\nA description of what needs to be done. Low level details to be added to the Misc section below.\n\n---\n\nAcceptance Criteria\nAC1: Add at least one acceptance criteria here.\n\n---\n\nBackground\nAdd background information here or delete this section.\n\n---\n\nMisc\nAdd misc information here or delete this section.\n"
 
   # Daily Summary - Subject
   - trigger: "-:dss"
