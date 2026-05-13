@@ -7,9 +7,6 @@ alias lla='ls -laG'
 alias cat='bat --paging=never'
 alias dev='python3 -m http.server'
 
-# Configure Rust
-export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
-
 # Configure Autocomplete
 autoload -Uz compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
@@ -98,6 +95,11 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Ollama Settings
+export OLLAMA_KV_CACHE_TYPE="q8_0"
+export OLLAMA_CONTEXT_LENGTH="32768"
+export OLLAMA_KEEP_ALIVE="2h"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
