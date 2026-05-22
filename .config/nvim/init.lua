@@ -17,14 +17,13 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
-
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.wrap = false
 
 vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
@@ -108,11 +107,11 @@ if has_blink then
   vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", { link = "Special", bold = true })
 
   -- 3. FIX: Match the menu backgrounds directly to your main editor window
-  vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
-  vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "none" })
 
   -- 4. Make the documentation separator line transparent with white dashes
-  vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "none", fg = "#ffffff" })
+  -- vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "none", fg = "#ffffff" })
 end
 
 -- 2. Formatting Engine (Conform.nvim)
@@ -180,6 +179,21 @@ if has_mason then
     vim.lsp.config(server, { capabilities = capabilities })
     vim.lsp.enable(server)
   end
+end
+
+-- 5. Transparency Setup
+local has_transparent, transparent = pcall(require, "transparent")
+if has_transparent then
+  transparent.setup({
+    -- Add the Blink UI elements here so transparent.nvim handles them automatically
+    extra_groups = {
+      "BlinkCmpMenu",
+      "BlinkCmpMenuBorder",
+      "BlinkCmpDoc",
+      "BlinkCmpDocBorder",
+      "BlinkCmpDocSeparator",
+    },
+  })
 end
 
 -- Modelines
