@@ -7,9 +7,6 @@ alias lla='ls -laG'
 alias cat='bat --paging=never'
 alias dev='python3 -m http.server'
 
-# Configure Rust
-export RUSTFLAGS="-L/opt/homebrew/opt/libpq/lib"
-
 # Configure Autocomplete
 autoload -Uz compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
@@ -52,7 +49,7 @@ setopt EXTENDED_HISTORY  # record command start time
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 autoload -U +X bashcompinit && bashcompinit
 
@@ -61,10 +58,10 @@ export PATH="~/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Postgres
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+# export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
 
 # tmux session
 bindkey -s "^[\\" "~/.config/personal_scripts/tmux-session.sh\n"
@@ -99,6 +96,8 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Ollama Settings
+export OLLAMA_KV_CACHE_TYPE="q8_0"
+export OLLAMA_CONTEXT_LENGTH="32768"
+export OLLAMA_KEEP_ALIVE="2h"
+
