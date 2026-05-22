@@ -1,0 +1,43 @@
+# -----------------------------------------
+# Shared Environment & Editors
+# -----------------------------------------
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# -----------------------------------------
+# Shared Aliases
+# -----------------------------------------
+alias cat='bat --paging=never'
+alias dev='python3 -m http.server'
+alias ..="cd .."
+
+# OS-Specific ls Aliases
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ll='ls -lG'
+    alias lla='ls -laG'
+else
+    alias ll='ls -l --color=auto'
+    alias lla='ls -la --color=auto'
+fi
+
+# -----------------------------------------
+# Language & Tools Setup
+# -----------------------------------------
+# Golang
+export PATH="$HOME/go/bin:$PATH"
+
+# Ollama Settings
+export OLLAMA_KV_CACHE_TYPE="q8_0"
+export OLLAMA_CONTEXT_LENGTH="32768"
+export OLLAMA_KEEP_ALIVE="2h"
+
+# Universal History Size (Shared variable name)
+export HISTSIZE=1000000
+
+# -----------------------------------------
+# Local Overrides (Loads Mac-only or Phone-only extras)
+# -----------------------------------------
+if [ -f "$HOME/.shell_local_rc" ]; then
+    source "$HOME/.shell_local_rc"
+fi
+

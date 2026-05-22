@@ -1,6 +1,5 @@
 # Ignore Files
 
 \.DS_Store
-\.git
-README\.md
+\.shell_local_example_rc
 
