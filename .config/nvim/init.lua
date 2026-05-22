@@ -151,13 +151,15 @@ end
 local has_mason, mason = pcall(require, "mason")
 
 if has_mason then
-  mason.setup()
+  -- Performance hack: Mason is just a UI registry. Defer it so it doesn't block startup.
+  vim.schedule(function()
+    mason.setup()
+  end)
 
-  -- Safely fetch default completion capabilities from blink.cmp
   local capabilities = has_blink and blink.get_lsp_capabilities() or {}
 
-  -- Lua Server
-  vim.lsp.config.lua_ls = {
+  -- 1. Setup Lua LS (since it has custom settings)
+  vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     settings = {
       Lua = {
@@ -169,28 +171,15 @@ if has_mason then
         },
       },
     },
-  }
+  })
   vim.lsp.enable("lua_ls")
 
-  -- Go Server
-  vim.lsp.config.gopls = { capabilities = capabilities }
-  vim.lsp.enable("gopls")
-
-  -- ESLint Server
-  vim.lsp.config.eslint = { capabilities = capabilities }
-  vim.lsp.enable("eslint")
-
-  -- HTML Server
-  vim.lsp.config.html = { capabilities = capabilities }
-  vim.lsp.enable("html")
-
-  -- CSS Server
-  vim.lsp.config.cssls = { capabilities = capabilities }
-  vim.lsp.enable("cssls")
-
-  -- JavaScript & TypeScript Server
-  vim.lsp.config.ts_ls = { capabilities = capabilities }
-  vim.lsp.enable("ts_ls")
+  -- 2. Dynamically setup the rest
+  local servers = { "gopls", "eslint", "html", "cssls", "ts_ls" }
+  for _, server in ipairs(servers) do
+    vim.lsp.config(server, { capabilities = capabilities })
+    vim.lsp.enable(server)
+  end
 end
 
 -- Modelines
