@@ -39,10 +39,11 @@ vim.opt.wildignore:append({
   "*/target/*",
   "*/out/*",
   "*/build/*",
+  "*/dist/*",
 })
 
 -- 2. Clean Netrw hide list (No dotfile hider so your .config is always visible)
-vim.g.netrw_list_hide = [[node_modules/,target/,out/,build/]]
+vim.g.netrw_list_hide = [[node_modules/,target/,out/,build/,dist/]]
 
 -- 3. FIX: Clear wildignore locally inside Netrw so it doesn't choke
 vim.api.nvim_create_autocmd("FileType", {
@@ -56,15 +57,16 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 4. Enable the popup menu (pum) and fuzzy matching for command-line completion
 vim.o.wildoptions = "pum,fuzzy"
 vim.o.wildmode = "noselect" -- Don't automatically insert the first match while typing
-vim.o.path = ".,**"         -- Standard path fallback
 
 -- 5. NEOVIM 0.12 SUPERPOWER: Hook into findfunc for true interactive fuzzy finding
+local project_root = vim.fn.getcwd()
 local files_cache = {}
+vim.o.path = ".,**," .. project_root
 
 _G.native_find_picker = function(arg, flag)
-  -- Populate the cache once per command-line session using a fast, local shell find
+  -- Gather files exactly once from the true project root folder
   if #files_cache == 0 then
-    local cmd = "find . -type f " ..
+    local cmd = "find " .. vim.fn.shellescape(project_root) .. " -type f " ..
         "-not -path '*/.git/*' " ..
         "-not -path '*/node_modules/*' " ..
         "-not -path '*/target/*' " ..
@@ -73,9 +75,9 @@ _G.native_find_picker = function(arg, flag)
     local raw_files = vim.fn.systemlist(cmd)
     files_cache = {}
     for _, file in ipairs(raw_files) do
-      -- FIX: Extract ONLY the string from gsub so table.insert doesn't crash
-      local clean_file = file:gsub("^%./", "")
-      table.insert(files_cache, clean_file)
+      -- Strip the absolute project root prefix to keep the completion menu clean
+      local relative_file = file:sub(#project_root + 2)
+      table.insert(files_cache, relative_file)
     end
   end
 
@@ -108,16 +110,13 @@ vim.api.nvim_create_autocmd("CmdlineChanged", {
   end,
 })
 
--- Safe, lightning-fast fuzzy finder locked to your project session
-vim.keymap.set("n", "<leader>f", ":find ")
--- Quickly fuzzy-search and switch between open buffers
-vim.keymap.set("n", "<leader>b", ":b ")
-
 -- ========================================================================== --
 -- ==                             BASIC KEYMAPS                            == --
 -- ========================================================================== --
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>f", ":find ")
+vim.keymap.set("n", "<leader>b", ":b ")
 
 -- ========================================================================== --
 -- ==                                AUTOCMDS                              == --
