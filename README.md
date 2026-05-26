@@ -8,7 +8,7 @@ This project is best used with [GNU Stow](https://www.gnu.org/software/stow/). D
 
 When setting up for macOS, be sure to clone this repository to `~/.dotfiles`. Once done, navigate to `~/.dotfiles` in your terminal. Once there, run the following command.
 
-> `stow zsh shell tmux`
+> `stow zsh shell config tmux aerospace`
 
 This will configure zsh and the shell. For local overrides for your machine, create a `~/.shell_local_rc` file and make changes there. It will be loaded last.
 
@@ -16,7 +16,7 @@ This will configure zsh and the shell. For local overrides for your machine, cre
 
 When setting up for Linux, be sure to clone this repository to `~/.dotfiles`. Once done, navigate to `~/.dotfiles` in your terminal. Once there, run the following command.
 
-> `stow bash shell tmux`
+> `stow bash shell config tmux`
 
 This will configure zsh and the shell. For local overrides for your machine, create a `~/.shell_local_rc` file and make changes there. It will be loaded last.
 
