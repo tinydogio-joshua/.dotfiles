@@ -30,6 +30,90 @@ vim.schedule(function()
 end)
 
 -- ========================================================================== --
+-- ==                             FUZZY SEARCH                             == --
+-- ========================================================================== --
+-- 1. Keep wildignore strictly for your :e and command-line completions
+vim.opt.wildignore:append({
+  "*/.git/*",
+  "*/node_modules/*",
+  "*/target/*",
+  "*/out/*",
+  "*/build/*",
+})
+
+-- 2. Clean Netrw hide list (No dotfile hider so your .config is always visible)
+vim.g.netrw_list_hide = [[node_modules/,target/,out/,build/]]
+
+-- 3. FIX: Clear wildignore locally inside Netrw so it doesn't choke
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("netrw-wildignore-fix", { clear = true }),
+  pattern = "netrw",
+  callback = function()
+    vim.opt_local.wildignore = ""
+  end,
+})
+
+-- 4. Enable the popup menu (pum) and fuzzy matching for command-line completion
+vim.o.wildoptions = "pum,fuzzy"
+vim.o.wildmode = "noselect" -- Don't automatically insert the first match while typing
+vim.o.path = ".,**"         -- Standard path fallback
+
+-- 5. NEOVIM 0.12 SUPERPOWER: Hook into findfunc for true interactive fuzzy finding
+local files_cache = {}
+
+_G.native_find_picker = function(arg, flag)
+  -- Populate the cache once per command-line session using a fast, local shell find
+  if #files_cache == 0 then
+    local cmd = "find . -type f " ..
+        "-not -path '*/.git/*' " ..
+        "-not -path '*/node_modules/*' " ..
+        "-not -path '*/target/*' " ..
+        "-not -path '*/out/*' " ..
+        "-not -path '*/build/*'"
+    local raw_files = vim.fn.systemlist(cmd)
+    files_cache = {}
+    for _, file in ipairs(raw_files) do
+      -- FIX: Extract ONLY the string from gsub so table.insert doesn't crash
+      local clean_file = file:gsub("^%./", "")
+      table.insert(files_cache, clean_file)
+    end
+  end
+
+  -- Return matching candidates using Neovim's built-in fuzzy matching utility
+  if arg == "" then
+    return files_cache
+  else
+    return vim.fn.matchfuzzy(files_cache, arg)
+  end
+end
+
+-- Wire the custom picker into Neovim's native find engine
+vim.o.findfunc = "v:lua.native_find_picker"
+
+-- Clear file cache when entering the command line to capture file changes
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+  group = vim.api.nvim_create_augroup("clear-find-cache", { clear = true }),
+  pattern = ":",
+  callback = function()
+    files_cache = {}
+  end,
+})
+
+-- Auto-trigger completion popup as you type in the command-line
+vim.api.nvim_create_autocmd("CmdlineChanged", {
+  group = vim.api.nvim_create_augroup("cmdline-fuzzy-complete", { clear = true }),
+  pattern = ":",
+  callback = function()
+    vim.fn.wildtrigger()
+  end,
+})
+
+-- Safe, lightning-fast fuzzy finder locked to your project session
+vim.keymap.set("n", "<leader>f", ":find ")
+-- Quickly fuzzy-search and switch between open buffers
+vim.keymap.set("n", "<leader>b", ":b ")
+
+-- ========================================================================== --
 -- ==                             BASIC KEYMAPS                            == --
 -- ========================================================================== --
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
