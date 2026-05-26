@@ -233,35 +233,36 @@ end
 local has_mason, mason = pcall(require, "mason")
 
 if has_mason then
-  -- Performance hack: Mason is just a UI registry. Defer it so it doesn't block startup.
+  -- Wrap both Mason AND the LSP configurations inside the schedule block.
+  -- This ensures Mason registers its binary paths before Neovim tries to start the servers.
   vim.schedule(function()
     mason.setup()
-  end)
 
-  local capabilities = has_blink and blink.get_lsp_capabilities() or {}
+    local capabilities = has_blink and blink.get_lsp_capabilities() or {}
 
-  -- 1. Setup Lua LS (since it has custom settings)
-  vim.lsp.config("lua_ls", {
-    capabilities = capabilities,
-    settings = {
-      Lua = {
-        runtime = { version = "LuaJIT" },
-        diagnostics = { globals = { "vim" } },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-          checkThirdParty = false,
+    -- 1. Setup Lua LS
+    vim.lsp.config("lua_ls", {
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          diagnostics = { globals = { "vim" } },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
         },
       },
-    },
-  })
-  vim.lsp.enable("lua_ls")
+    })
+    vim.lsp.enable("lua_ls")
 
-  -- 2. Dynamically setup the rest
-  local servers = { "gopls", "eslint", "html", "cssls", "ts_ls" }
-  for _, server in ipairs(servers) do
-    vim.lsp.config(server, { capabilities = capabilities })
-    vim.lsp.enable(server)
-  end
+    -- 2. Dynamically setup the rest
+    local servers = { "gopls", "eslint", "html", "cssls", "ts_ls" }
+    for _, server in ipairs(servers) do
+      vim.lsp.config(server, { capabilities = capabilities })
+      vim.lsp.enable(server)
+    end
+  end)
 end
 
 -- 5. Transparency Setup
