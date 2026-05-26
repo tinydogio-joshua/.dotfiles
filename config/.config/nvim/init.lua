@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- 4. Enable the popup menu (pum) and fuzzy matching for command-line completion
 vim.o.wildoptions = "pum,fuzzy"
-vim.o.wildmode = "noselect" -- Don't automatically insert the first match while typing
+vim.o.wildmode = "noselect"
 
 -- 5. NEOVIM 0.12 SUPERPOWER: Hook into findfunc for true interactive fuzzy finding
 local project_root = vim.fn.getcwd()
