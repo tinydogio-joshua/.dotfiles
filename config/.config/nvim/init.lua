@@ -73,6 +73,7 @@ _G.native_find_picker = function(arg, flag)
         "-not -path '*/out/*' " ..
         "-not -path '*/build/*'"
     local raw_files = vim.fn.systemlist(cmd)
+
     files_cache = {}
     for _, file in ipairs(raw_files) do
       -- Strip the absolute project root prefix to keep the completion menu clean
@@ -81,7 +82,7 @@ _G.native_find_picker = function(arg, flag)
     end
   end
 
-  -- Return matching candidates using Neovim's built-in fuzzy matching utility
+  -- Return ALL matching candidates and let Neovim's pum handle the scrolling
   if arg == "" then
     return files_cache
   else
@@ -92,12 +93,26 @@ end
 -- Wire the custom picker into Neovim's native find engine
 vim.o.findfunc = "v:lua.native_find_picker"
 
--- Clear file cache when entering the command line to capture file changes
-vim.api.nvim_create_autocmd("CmdlineEnter", {
-  group = vim.api.nvim_create_augroup("clear-find-cache", { clear = true }),
-  pattern = ":",
-  callback = function()
-    files_cache = {}
+-- Smart cache invalidation: Only clear the find cache when a NEW file is saved
+vim.api.nvim_create_autocmd("BufWritePost", {
+  desc = "Clear fuzzy find cache when a new file is created",
+  group = vim.api.nvim_create_augroup("smart-find-cache", { clear = true }),
+  callback = function(args)
+    if #files_cache == 0 then return end
+
+    local saved_file = vim.fn.fnamemodify(args.match, ":.")
+    local is_known_file = false
+
+    for _, cached_file in ipairs(files_cache) do
+      if cached_file == saved_file then
+        is_known_file = true
+        break
+      end
+    end
+
+    if not is_known_file then
+      files_cache = {}
+    end
   end,
 })
 
